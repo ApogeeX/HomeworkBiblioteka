@@ -187,6 +187,20 @@
             this.deleteSelectedBookToolStripMenuItem.Text = "Delete selected Book";
             this.deleteSelectedBookToolStripMenuItem.Click += new System.EventHandler(this.deleteSelectedBookToolStripMenuItem_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteSelectedBookToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(184, 26);
+            // 
+            // deleteSelectedBookToolStripMenuItem
+            // 
+            this.deleteSelectedBookToolStripMenuItem.Name = "deleteSelectedBookToolStripMenuItem";
+            this.deleteSelectedBookToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.deleteSelectedBookToolStripMenuItem.Text = "Delete selected book";
+            this.deleteSelectedBookToolStripMenuItem.Click += new System.EventHandler(this.deleteSelectedBookToolStripMenuItem_Click);
+            // 
             // refresh
             // 
             this.refresh.Location = new System.Drawing.Point(9, 357);
