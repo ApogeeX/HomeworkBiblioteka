@@ -24,11 +24,6 @@ namespace HomeworkBiblioteka
             genresDataGridView.DataSource = genreBindingSource;
         }
 
-        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void refresh_Click(object sender, EventArgs e)
         {
             BooksDAO booksDAO = new BooksDAO();
@@ -152,6 +147,9 @@ namespace HomeworkBiblioteka
             bookBindingSource.DataSource = booksDAO.getAllBooks();
 
             dataGridView1.DataSource = bookBindingSource;
+
+            authorsDataGridView.ClearSelection();
+            genresDataGridView.ClearSelection();
         }
 
         private void borrowCopyButton_Click(object sender, EventArgs e)
@@ -195,6 +193,17 @@ namespace HomeworkBiblioteka
             else if (Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[6].Value) < 4)
             {
                 dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Beige;
+            }
+        }
+        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[6].Value) == 0)
+            {
+                borrowCopyButton.Enabled = false;
+            }
+            else
+            {
+                borrowCopyButton.Enabled = true;
             }
         }
     }

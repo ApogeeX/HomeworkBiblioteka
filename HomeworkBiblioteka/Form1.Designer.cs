@@ -169,23 +169,11 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(784, 346);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
             this.dataGridView1.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridView1_RowPrePaint);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteSelectedBookToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(184, 26);
-            // 
-            // deleteSelectedBookToolStripMenuItem
-            // 
-            this.deleteSelectedBookToolStripMenuItem.Name = "deleteSelectedBookToolStripMenuItem";
-            this.deleteSelectedBookToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.deleteSelectedBookToolStripMenuItem.Text = "Delete selected Book";
-            this.deleteSelectedBookToolStripMenuItem.Click += new System.EventHandler(this.deleteSelectedBookToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
             // 
@@ -411,6 +399,8 @@
             // 
             // genresDataGridView
             // 
+            this.genresDataGridView.AllowUserToAddRows = false;
+            this.genresDataGridView.AllowUserToDeleteRows = false;
             this.genresDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.genresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.genresDataGridView.Location = new System.Drawing.Point(8, 121);

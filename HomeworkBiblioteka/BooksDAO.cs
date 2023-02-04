@@ -100,7 +100,7 @@ namespace HomeworkBiblioteka
 
             connection.Open();
             SqlCommand command = new SqlCommand();
-            command.CommandText = "SELECT BOOKS.ID, BOOKTITLE as TITLE, SHORTDESC as DESCRIPTION, AUTHOR, GENRE, ISAVAIBLE FROM BOOKS INNER JOIN AUTHORS ON BOOKS.AUTHORID = AUTHORS.ID INNER JOIN GENRES ON BOOKS.GENREID = GENRES.ID WHERE BOOKTITLE LIKE @search";
+            command.CommandText = "SELECT BOOKS.ID, BOOKTITLE as TITLE, SHORTDESC as DESCRIPTION, AUTHOR, GENRE, ISAVAIBLE, COPIES FROM BOOKS INNER JOIN AUTHORS ON BOOKS.AUTHORID = AUTHORS.ID INNER JOIN GENRES ON BOOKS.GENREID = GENRES.ID WHERE BOOKTITLE LIKE @search";
             command.Parameters.AddWithValue("@search", searchWildPhrase);
             command.Connection = connection;
 
@@ -116,6 +116,7 @@ namespace HomeworkBiblioteka
                         Author = reader.GetString(3),
                         Genre = reader.GetString(4),
                         IsAvaible = reader.GetBoolean(5),
+                        Copies = reader.GetInt32(6),
                     };
                     returnThese.Add(a);
                 }
