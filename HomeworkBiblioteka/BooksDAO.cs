@@ -1,6 +1,5 @@
 ﻿using System.Data.SqlClient;
 
-
 namespace HomeworkBiblioteka
 {
     internal class BooksDAO
